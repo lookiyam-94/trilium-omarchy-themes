@@ -1,0 +1,160 @@
+/* Flexoki Light for Trilium
+ * Note type: Code -> CSS
+ * Owned attributes: #appTheme=flexoki-light #appThemeBase=next-light
+ *   appThemeBase is what pulls in the modern TriliumNext UI.
+ *   Without it the theme falls back to the legacy layout.
+ * Then Menu > Options > Appearance > Theme, and Ctrl+R to reload.
+ */
+
+:root {
+  --bg: #fffcf0;
+  --bg-dark: #f2efe4;
+  --bg-darker: #e5e2d8;
+  --bg-light: #e6e4d9;
+  --fg: #100f0f;
+  --fg-bright: #100f0f;
+  --fg-dim: #878580;
+  --selection: #cecdc3;
+  --muted: #b7b5ac;
+  --accent: #205ea6;
+  --red: #d14d41;
+  --orange: #d0772b;
+  --yellow: #d0a215;
+  --green: #879a39;
+  --cyan: #3aa99f;
+  --blue: #205ea6;
+  --magenta: #ce5d97;
+}
+
+#trilium-app {
+  --theme-style: light;
+  --mermaid-theme: default;
+
+  --main-background-color: var(--bg);
+  --main-text-color: var(--fg);
+  --main-border-color: var(--muted);
+
+  --accented-background-color: var(--bg-dark);
+  --more-accented-background-color: var(--bg-darker);
+
+  --left-pane-background-color: var(--bg-dark);
+  --left-pane-text-color: var(--fg);
+  --launcher-pane-background-color: var(--bg-darker);
+  --launcher-pane-text-color: var(--fg-dim);
+
+  --active-tab-background-color: var(--bg);
+  --active-tab-text-color: var(--fg-bright);
+  --active-tab-hover-background-color: var(--bg);
+  --inactive-tab-background-color: var(--bg-dark);
+  --inactive-tab-text-color: var(--fg-dim);
+  --inactive-tab-hover-background-color: var(--bg-darker);
+
+  --button-text-color: var(--fg);
+  --button-background-color: var(--bg-dark);
+  --button-border-color: var(--muted);
+  --button-border-radius: 4px;
+  --button-disabled-text-color: var(--fg-dim);
+  --button-disabled-background-color: var(--bg-dark);
+
+  --primary-button-background-color: var(--accent);
+  --primary-button-text-color: var(--bg);
+  --primary-button-border-color: var(--accent);
+
+  --muted-text-color: var(--fg-dim);
+
+  --input-text-color: var(--fg);
+  --input-background-color: var(--bg);
+
+  --hover-item-text-color: var(--fg-bright);
+  --hover-item-background-color: var(--bg-darker);
+  --active-item-text-color: var(--fg-bright);
+  --active-item-background-color: var(--selection);
+  --active-item-border-color: var(--accent);
+
+  --menu-text-color: var(--fg);
+  --menu-background-color: var(--bg);
+
+  --modal-background-color: var(--bg);
+  --modal-backdrop-color: var(--fg-dim);
+
+  --tooltip-background-color: var(--bg-dark);
+  --scrollbar-border-color: var(--muted);
+  --link-color: var(--accent);
+}
+
+/* Tree and scrollbar */
+::-webkit-scrollbar-thumb {
+  background: var(--muted) !important;
+}
+
+span.fancytree-custom-icon {
+  color: var(--accent);
+  background: none;
+}
+
+span.fancytree-node:hover {
+  border: 0 !important;
+  background-color: var(--hover-item-background-color) !important;
+}
+
+span.fancytree-active {
+  background-color: var(--selection) !important;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Code notes */
+.ck-content pre {
+  background: var(--bg-dark);
+  border: 1px solid var(--muted);
+}
+
+.CodeMirror-linenumber {
+  color: var(--fg-dim);
+}
+
+.note-detail-code-editor div.CodeMirror-selected {
+  background-color: var(--selection);
+}
+
+.CodeMirror-matchingbracket {
+  text-decoration: none;
+  color: var(--accent) !important;
+  border: 1px solid var(--accent);
+}
+
+div.CodeMirror span.cm-comment  { color: var(--fg-dim); }
+div.CodeMirror span.cm-keyword  { color: var(--magenta); }
+div.CodeMirror span.cm-operator { color: var(--magenta); }
+div.CodeMirror span.cm-meta     { color: var(--magenta); }
+div.CodeMirror span.cm-string   { color: var(--green); }
+div.CodeMirror span.cm-string-2 { color: var(--cyan); }
+div.CodeMirror span.cm-number   { color: var(--orange); }
+div.CodeMirror span.cm-atom     { color: var(--orange); }
+div.CodeMirror span.cm-def      { color: var(--yellow); }
+div.CodeMirror span.cm-variable { color: var(--fg); }
+div.CodeMirror span.cm-variable-2 { color: var(--blue); }
+div.CodeMirror span.cm-property { color: var(--blue); }
+div.CodeMirror span.cm-builtin  { color: var(--cyan); }
+div.CodeMirror span.cm-qualifier { color: var(--yellow); }
+div.CodeMirror span.cm-tag      { color: var(--red); }
+div.CodeMirror span.cm-attribute { color: var(--yellow); }
+
+/* Search highlights */
+.ck-find-result {
+  color: var(--bg) !important;
+  background-color: var(--yellow);
+}
+
+.ck-find-result_selected {
+  color: var(--bg) !important;
+  background-color: var(--accent);
+}
+
+/* Canvas notes */
+.excalidraw:not(.theme--dark) {
+  --island-bg-color: var(--bg-dark) !important;
+  --button-hover-bg: var(--bg-darker) !important;
+}
